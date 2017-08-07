@@ -1,4 +1,68 @@
-<template name="App_home">
+<!DOCTYPE html>
+<html>
+<head>
+<title>blueplate.co</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+<script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+</head>
+
+
+<style>
+
+.backdrop {
+  background: url('../../assets/Backdrop_treated_optimized.jpg') center / cover;
+}
+
+.introduction {
+    margin: auto;
+    width: 340px;
+    padding: 250px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.company_logo {
+    display: block;
+    width: 300px;
+    padding: 20px;
+}
+</style>
+
+<body class="backdrop">
+    <!-- Always shows a header, even in smaller screens. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header mdl-color--grey-800">
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">Home</span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">Title</span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="">Link</a>
+          <a class="mdl-navigation__link" href="">Link</a>
+          <a class="mdl-navigation__link" href="">Link</a>
+          <a class="mdl-navigation__link" href="">Link</a>
+        </nav>
+      </div>
+      <main class="mdl-layout__content mdl-color-text--white">
+        <div class="introduction">
+            <img src = "../../assets/logo.svg" class="company_logo" alt="company_logo">
+            <p>Blueplate provides food sharing platform to foodie in a passionate environment with a motivating voice. Helping them to feel loved and touched from the stories to be told.</p>
+            <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color--orange-600 mdl-color-text--black">join us to share your passion</button>
+        </div>
+      </main>
+    </div>
+</body>
+</html>
+
+<!-- <template name="App_home">
   {{> hello}}
   {{> info}}
-</template>
+</template> -->
