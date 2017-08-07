@@ -3,14 +3,18 @@
 <head>
 <title>blueplate.co</title>
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+<!-- Material Design Lite-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
 <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 <!-- For Drop Down List -->
-<link rel="stylesheet" href="../../../node_modules/getmdl-select/getmdl-select.min.css">
-<script defer src="../../../node_modules/getmdl-select/getmdl-select.min.js"></script>
-</head>
+<link rel="stylesheet" href="../../../../node_modules/getmdl-select/getmdl-select.min.css">
+<script defer src="../../../../node_modules/getmdl-select/getmdl-select.min.js"></script>
+<!-- for Select field list-->
+<link rel="stylesheet" href="../../../../bower_components/mdl-selectfield/dist/mdl-selectfield.min.css">
+<script src="../../../../bower_componentsf/mdl-selectfield/dist/mdl-selectfield.min.js"></script>
 
+</head>
 
 <style>
 #span_drawer {
@@ -257,23 +261,24 @@ input:checked + section.box .box-title:before {
                         </ul>
                         <div class="dishname">(Dish Name)</div>
                         <div class="chefname">Cooked by (Chef Name)</div>
-                        <!-- Select with arrow-->
-                        <div id="div_quantity" class="mdl-textfield mdl-js-textfield getmdl-select">
-                            <input id="input_quantity" class="mdl-textfield__input" type="text" id="sample1" value="QTY: 1" readonly>
-                            <label for="sample1">                  
-                                <i id="i_quantity" class="material-icons">keyboard_arrow_down</i>            
-                            </label>
-                            <ul for="sample1" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-                                <li class="mdl-menu__item" data-val="1">1</li>
-                                <li class="mdl-menu__item" data-val="2">2</li>
-                                <li class="mdl-menu__item" data-val="3">3</li>
-                                <li class="mdl-menu__item" data-val="4">4</li>
-                                <li class="mdl-menu__item" data-val="5">5</li>
-                            </ul>
+                        
+                        <!-- quantity dropdown by Michael -->
+                        <div id="select_quantity_id" class="mdl-selectfield mdl-js-selectfield mdl-selectfield--floating-label" style="width:100px">
+                            <select id="quantity_list_id" name="quantity_list" class="mdl-selectfield__select">
+                                <option value=""></option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                            </select>
+                            <div class="mdl-selectfield__icon"><i id="i_quatity" class="material-icons">keyboard_arrow_down</i></div>
+                            <label for="quantity_list_id" class="mdl-selectfield__label">Quantity</label>
                         </div>
+                        <!-- end here -->
+                        
                         <div class="priceperdish">(Price)</div>
                       </td>
                     </tr>
+                    
                    <tr>
                       <td class="mdl-data-table__cell--non-numeric">
                         <!-- Right aligned menu below button -->
