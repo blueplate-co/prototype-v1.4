@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>blueplate.co</title>
+
+<!-- Material Design Lite-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+<script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+<!-- For Drop Down List -->
+<link rel="stylesheet" href="../../../../node_modules/mdl-selectfield/dist/mdl-selectfield.min.css">
+<script defer src="../../../../node_modules/mdl-selectfield/dist/mdl-selectfield.min.js"></script>
+
+</head>
+
+<style>
+
+#span_drawer {
+    background-color: #fcad0f;
+    height: 145px;
+}
+
+.demo-avatar {
+  margin-top: 40px;
+  width: 48px;
+  height: 48px;
+  border-radius: 24px;
+}
+
+#input_mail {
+    border-bottom: 0;
+}
+
+.nav_dashboard {
+    display: inherit;
+    margin-top: 10px;
+}
+
+.icons_dashboard {
+    padding-left: 24px;
+    padding-right: 30px;
+    color: #757575;
+}
+
+/* done with inline style to overide material.indigo-pink.min.css!
+.links_dashboard {
+     
+} */
+
+.mdl-navigation__link {
+    font-size: 15px;
+    font-weight: bold;
+}
+</style>
+
+<body>
+    <!-- The drawer is always open in large screens. The header is always shown,
+      even in small screens. -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      
+      <header class="mdl-layout__header mdl-color--grey-600">
+        <div class="mdl-layout__header-row">
+          <div class="mdl-layout-spacer"></div>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right">
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="fixed-header-drawer-exp">
+              <i class="material-icons">search</i>
+            </label>
+            <div class="mdl-textfield__expandable-holder">
+              <input class="mdl-textfield__input" type="text" name="sample" id="fixed-header-drawer-exp">
+            </div>
+          </div>
+        </div>
+      </header>
+      
+      <div class="mdl-layout__drawer">
+        <span id="span_drawer" class="mdl-layout-title">
+            <img src="../../assets/user.jpg" class="demo-avatar" />
+            <!-- <div class="mdl-textfield mdl-js-textfield getmdl-select">
+                <input id="input_mail" class="mdl-textfield__input" name="mail" value="(Mail)" type="text" readonly/>  
+                <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu" for="input_mail">
+                    <li class="mdl-menu__item">Option1</li>
+                    <li class="mdl-menu__item">Option2</li>
+                </ul>
+            </div> -->
+            <div class="demo-avatar-dropdown" style="margin-top: 15px; line-height: 1;">
+            <span style="font-size: 14px; color: white;">hello@example.com</span>
+            <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+              <i class="material-icons" role="presentation" style="color:white">arrow_drop_down</i>
+              <span class="visuallyhidden">Accounts</span>
+            </button>
+            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
+              <li class="mdl-menu__item">hello@example.com</li>
+              <li class="mdl-menu__item">info@example.com</li>
+              <li class="mdl-menu__item"><i class="material-icons">add</i>Add another account...</li>
+            </ul>
+          </div>
+        </span>
+        <nav class="mdl-navigation">
+          <div class="nav_dashboard">
+              <i class="material-icons icons_dashboard">forum</i>
+              <a class="mdl-navigation__link links_dashboard" href="#" style="padding-top:0px; padding-left: 0px; padding-bottom: 30px; color: black;">Live Chat</a>
+          </div>
+          <div class="nav_dashboard">
+              <i class="material-icons icons_dashboard">content_paste</i>
+              <a class="mdl-navigation__link" href="#" style="padding-top:0px; padding-left: 0px; padding-bottom: 30px; color: black;">My Order</a>
+          </div>
+          <div class="nav_dashboard">
+              <i class="material-icons icons_dashboard">delete</i>
+              <a class="mdl-navigation__link" href="#" style="padding-top:0px; padding-left: 0px; padding-bottom: 30px; color: black;">My Story</a>
+          </div>
+          <div class="nav_dashboard">
+              <i class="material-icons icons_dashboard">favorite</i>
+              <a class="mdl-navigation__link" href="#" style="padding-top:0px; padding-left: 0px; padding-bottom: 30px; color: black;">My Favourite</a>
+          </div>
+          <div class="nav_dashboard">
+              <i class="material-icons icons_dashboard">settings</i>
+              <a class="mdl-navigation__link" href="#" style="padding-top:0px; padding-left: 0px; padding-bottom: 30px; color: black;">Settings</a>
+          </div>
+          <div class="nav_dashboard">
+              <i class="material-icons icons_dashboard">flag</i>
+              <a class="mdl-navigation__link" href="#" style="padding-top:0px; padding-left: 0px; padding-bottom: 30px; color: black;">Sign Out</a>
+          </div> 
+        </nav>
+      </div>
+    </div>
+</body>
+</html>

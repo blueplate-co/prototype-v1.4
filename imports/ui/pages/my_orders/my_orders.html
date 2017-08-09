@@ -10,26 +10,49 @@
 <!-- For Drop Down List -->
 <link rel="stylesheet" href="../../../../node_modules/getmdl-select/getmdl-select.min.css">
 <script defer src="../../../../node_modules/getmdl-select/getmdl-select.min.js"></script>
-<!-- for Select field list-->
-<link rel="stylesheet" href="../../../../bower_components/mdl-selectfield/dist/mdl-selectfield.min.css">
-<script src="../../../../bower_componentsf/mdl-selectfield/dist/mdl-selectfield.min.js"></script>
+<!-- For Drop Down List -->
+<link rel="stylesheet" href="../../../../node_modules/mdl-selectfield/dist/mdl-selectfield.min.css">
+<script defer src="../../../../node_modules/mdl-selectfield/dist/mdl-selectfield.min.js"></script>
 
 </head>
 
 <style>
+
 #span_drawer {
     background-color: #fcad0f;
     height: 145px;
 }
 
-#profile_picture {
-    margin-bottom: 0px;
-    font-size: 23px;
-    margin-top: 40px;
+.demo-avatar {
+  margin-top: 40px;
+  width: 48px;
+  height: 48px;
+  border-radius: 24px;
 }
 
 #input_mail {
     border-bottom: 0;
+}
+
+.nav_dashboard {
+    display: inherit;
+    margin-top: 10px;
+}
+
+.icons_dashboard {
+    padding-left: 24px;
+    padding-right: 30px;
+    color: #757575;
+}
+
+/* done with inline style to overide material.indigo-pink.min.css!
+.links_dashboard {
+     
+} */
+
+.mdl-navigation__link {
+    font-size: 15px;
+    font-weight: bold;
 }
 
 #title_myorders {
@@ -37,13 +60,15 @@
     margin-top: 10px;
     font-size: 15px;
     font-weight: bold;
-    margin-left: 260px;
     color: #71767f;
+    margin-right: 33%;
+    text-align: center;
 }
 
 #table_myorders {
     width: 720px;
-    margin-left: 245px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .data_myorders {
@@ -66,16 +91,16 @@
     font-size: 14px
 }
 
-#div_quantity {
-    display: inline-flex;
+.div_quantity {
     padding: 10px 0;
-    width: 65px;
+    display: inline-flex;
 }
 
-#input_quantity {
+.input_quantity {
     font-size: 14px;
     border-bottom: 0;
 }
+
 
 #i_quantity {
     font-size: 15px;
@@ -90,24 +115,85 @@
     font-weight: bold;
 }
 
+#deliveryandspecial {
+    display: inline-flex;
+    width: 100%;
+}
+
+#titles_deliveryandspecial {
+    display: inline-flex;
+    margin-top: 15px;
+    width: 100%;
+}
+
+#title_delivery {
+    margin-right: 340px;
+     margin-left: 31.5%;
+}
+
 #title_delivery, #title_special {
-    margin-bottom: 10px;
-    margin-top: 10px;
     font-size: 15px;
     font-weight: bold;
-    margin-left: 250px;
     color: #71767f;
 }
 
-#table_delivery, #nav_special{
-    width: 350px;
-    height: 160px;
-    margin-left: 245px;
+#table_delivery {
+    width: 340px;
+    height: 180px;
+    margin-left: 30.8%;
+    margin-right: 60px;
+}
+
+#nav_special {
+    width: 320px;
 }
 
 .mdl-radio__label {
     font-size: 15px;
     float: left;
+    display: inline-flex;
+}
+
+.icons_delivery {
+    margin-right: 20px;
+    font-size: 20px;
+    color: #757575;
+}
+
+.icons_special {
+    margin-right: 15px;
+    font-size: 20px;
+    color: #757575;
+}
+
+footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin-left: 0px;
+    text-align: center;
+    border-top: 1px solid rgba(0,0,0,.12);
+}
+
+footer #total {
+    margin-left: auto;
+    margin-right: 800px;
+    height: 500px;
+    line-height: 3;
+    font-weight: bold;
+    color: #f9ba0c;
+    display: inline;
+    font-size: 15px;
+    width: 100px;
+}
+
+#placeorder {
+    width: 100px;
+    display: inline;
+    color: #f9ba0c;
+    font-weight: bold;
+    font-size: 15px;
 }
 
 .accordion {
@@ -119,7 +205,7 @@
 .box {
 	position: relative;
 	background: white;
-    height: 64px;
+    height: 57px;
     transition: all .15s ease-in-out;
 }
 .box::before {
@@ -224,20 +310,52 @@ input:checked + section.box .box-title:before {
       
       <div class="mdl-layout__drawer">
         <span id="span_drawer" class="mdl-layout-title">
-            <p id="profile_picture">(Profile Picture)</p>
-            <div class="mdl-textfield mdl-js-textfield getmdl-select">
+            <img src="../../assets/user.jpg" class="demo-avatar" />
+            <!-- <div class="mdl-textfield mdl-js-textfield getmdl-select">
                 <input id="input_mail" class="mdl-textfield__input" name="mail" value="(Mail)" type="text" readonly/>  
                 <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu" for="input_mail">
                     <li class="mdl-menu__item">Option1</li>
                     <li class="mdl-menu__item">Option2</li>
                 </ul>
-            </div>
+            </div> -->
+            <div class="demo-avatar-dropdown" style="margin-top: 15px; line-height: 1;">
+            <span style="font-size: 14px; color: white;">hello@example.com</span>
+            <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+              <i class="material-icons" role="presentation" style="color:white">arrow_drop_down</i>
+              <span class="visuallyhidden">Accounts</span>
+            </button>
+            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
+              <li class="mdl-menu__item">hello@example.com</li>
+              <li class="mdl-menu__item">info@example.com</li>
+              <li class="mdl-menu__item"><i class="material-icons">add</i>Add another account...</li>
+            </ul>
+          </div>
         </span>
         <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" href="">Link</a>
-          <a class="mdl-navigation__link" href="">Link</a>
-          <a class="mdl-navigation__link" href="">Link</a>
-          <a class="mdl-navigation__link" href="">Link</a>
+          <div class="nav_dashboard">
+              <i class="material-icons icons_dashboard">forum</i>
+              <a class="mdl-navigation__link links_dashboard" href="#" style="padding-top:0px; padding-left: 0px; padding-bottom: 30px; color: black;">Live Chat</a>
+          </div>
+          <div class="nav_dashboard">
+              <i class="material-icons icons_dashboard">content_paste</i>
+              <a class="mdl-navigation__link" href="#" style="padding-top:0px; padding-left: 0px; padding-bottom: 30px; color: black;">My Order</a>
+          </div>
+          <div class="nav_dashboard">
+              <i class="material-icons icons_dashboard">delete</i>
+              <a class="mdl-navigation__link" href="#" style="padding-top:0px; padding-left: 0px; padding-bottom: 30px; color: black;">My Story</a>
+          </div>
+          <div class="nav_dashboard">
+              <i class="material-icons icons_dashboard">favorite</i>
+              <a class="mdl-navigation__link" href="#" style="padding-top:0px; padding-left: 0px; padding-bottom: 30px; color: black;">My Favourite</a>
+          </div>
+          <div class="nav_dashboard">
+              <i class="material-icons icons_dashboard">settings</i>
+              <a class="mdl-navigation__link" href="#" style="padding-top:0px; padding-left: 0px; padding-bottom: 30px; color: black;">Settings</a>
+          </div>
+          <div class="nav_dashboard">
+              <i class="material-icons icons_dashboard">flag</i>
+              <a class="mdl-navigation__link" href="#" style="padding-top:0px; padding-left: 0px; padding-bottom: 30px; color: black;">Sign Out</a>
+          </div> 
         </nav>
       </div>
       <main class="mdl-layout__content">
@@ -252,8 +370,7 @@ input:checked + section.box .box-title:before {
                         <button id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon dotdotdot">
                           <i class="material-icons">more_vert</i>
                         </button>                    
-                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
-                            for="demo-menu-lower-right">
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right">
                           <li class="mdl-menu__item">Some Action</li>
                           <li class="mdl-menu__item">Another Action</li>
                           <li disabled class="mdl-menu__item">Disabled Action</li>
@@ -274,19 +391,17 @@ input:checked + section.box .box-title:before {
                             <label for="quantity_list_id" class="mdl-selectfield__label">Quantity</label>
                         </div>
                         <!-- end here -->
-                        
+                                
                         <div class="priceperdish">(Price)</div>
                       </td>
-                    </tr>
-                    
-                   <tr>
+                    </tr>           
+                    <tr>
                       <td class="mdl-data-table__cell--non-numeric">
                         <!-- Right aligned menu below button -->
-                        <button id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon dotdotdot">
+                        <button id="demo-menu-lower-right2" class="mdl-button mdl-js-button mdl-button--icon dotdotdot">
                           <i class="material-icons">more_vert</i>
                         </button>                    
-                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
-                            for="demo-menu-lower-right">
+                        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right2">
                           <li class="mdl-menu__item">Some Action</li>
                           <li class="mdl-menu__item">Another Action</li>
                           <li disabled class="mdl-menu__item">Disabled Action</li>
@@ -295,12 +410,12 @@ input:checked + section.box .box-title:before {
                         <div class="dishname">(Dish Name)</div>
                         <div class="chefname">Cooked by (Chef Name)</div>
                         <!-- Select with arrow-->
-                        <div id="div_quantity" class="mdl-textfield mdl-js-textfield getmdl-select">
-                            <input id="input_quantity" class="mdl-textfield__input" type="text" id="sample1" value="QTY: 1" readonly>
-                            <label for="sample1">                  
+                        <div class="mdl-textfield mdl-js-textfield getmdl-select div_quantity">
+                            <input class="mdl-textfield__input input_quantity" type="text" id="sample2" value="QTY: 1" readonly>
+                            <label for="sample2">                  
                                 <i id="i_quantity" class="material-icons">keyboard_arrow_down</i>            
                             </label>
-                            <ul for="sample1" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                            <ul for="sample2" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
                                 <li class="mdl-menu__item" data-val="1">1</li>
                                 <li class="mdl-menu__item" data-val="2">2</li>
                                 <li class="mdl-menu__item" data-val="3">3</li>
@@ -314,12 +429,22 @@ input:checked + section.box .box-title:before {
                   </tbody>
                 </table>
             </div>
-            <div id="delivery">
+            
+            <div id="titles_deliveryandspecial">
                 <p id="title_delivery">Delivery</p>
+                <p id="title_special">Special</p>
+            </div>
+            
+            <div id="deliveryandspecial">
                 <table id="table_delivery" class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
                   <tr>
-                    <td> 
-                      <span class="mdl-radio__label">Pickup</span>
+                    <td>
+                      
+                      <span class="mdl-radio__label">
+                        <i class="material-icons icons_delivery">mail</i>
+                        Pickup
+                      </span>
+                      
                       <label class="mdl-radio mdl-js-radio  mdl-js-ripple-effect" for="radio_pickup">
                         <input type="radio" id="radio_pickup" name="delivery_methods" class="mdl-radio__button">
                       </label>
@@ -327,7 +452,10 @@ input:checked + section.box .box-title:before {
             	  </tr>
             	  <tr>
                     <td>
-                      <span class="mdl-radio__label">Delivery</span>
+                      <span class="mdl-radio__label">
+                        <i class="material-icons icons_delivery">stars</i>
+                        Delivery
+                      </span>
                       <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="radio_delivery">
                          <input type="radio" id="radio_delivery" name="delivery_methods" class="mdl-radio__button">
                       </label>
@@ -335,27 +463,32 @@ input:checked + section.box .box-title:before {
             	   </tr>
                   <tr>
                     <td>
-                      <span class="mdl-radio__label">Dine-in</span>
+                      <span class="mdl-radio__label">
+                        <i class="material-icons icons_delivery">stars</i>
+                        Dine-in
+                      </span>
                       <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="radio_dinein">
                         <input type="radio" id="radio_dinein" name="delivery_methods" class="mdl-radio__button">
                       </label>      
             	    </td>
                   </tr>
-                </table>                 
-            </div>
-            
-            <div id="special">
-                <p id="title_special">Special</p>
+                </table>   
                 <nav id="nav_special" class="accordion arrows">
             		<input type="radio" name="accordion" id="cb1" />
             		<section class="box">
-            			<label class="box-title" for="cb1">Promotion Code</label>
+            			<label class="box-title" for="cb1">
+            			  <i class="material-icons icons_special">mail</i>
+            			  Promotion Code
+            			</label>
             			<label class="box-close" for="acc-close"></label>
             			<div class="box-content"></div>
             		</section>
             		<input type="radio" name="accordion" id="cb2" />
             		<section class="box">
-            			<label class="box-title" for="cb2">Gift Card</label>
+            			<label class="box-title" for="cb2">
+            			  <i class="material-icons icons_special">stars</i>
+            			  Gift Card
+            			</label>
             			<label class="box-close" for="acc-close"></label>
             			<div class="box-content"></div>
             		</section>
@@ -363,6 +496,11 @@ input:checked + section.box .box-title:before {
             		<input type="radio" name="accordion" id="acc-close" />
             	</nav>
             </div>
+            
+            <footer id="footer">
+                <p id="total">Total: (price)</p>
+                <p id="placeorder">Place Order</p>
+            </footer>
         </div>
       </main>
     </div>
